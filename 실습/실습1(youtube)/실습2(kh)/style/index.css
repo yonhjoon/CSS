@@ -89,7 +89,7 @@ li a{
     padding: 20px 0px;
 }
 
-#nav ul{
+#nav>ul{
     display: flex;
     width: 100%;
     /* justify-content: space-around;
@@ -98,16 +98,36 @@ li a{
     text-align: center;
 }
 
-#nav li{
+#nav > ul >li{
     width: 20%;
     /* 이 안에서 더이상 늘어날필요가없다면 위 #nav ul 안에
      text-align: center;를 넣어 만들어준다 */
+
+     position: relative;
+}
+
+#nav>ul>li ul{
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    padding: 5px 0px;
+    background: white;
+    /* left: calc(50% - 35px); */
+    display: none;
 }
 
 #nav li a{
-    text-decoration: none;
     color: gray;
     font-weight: bold;
+}
+
+#nav > ul > li a:hover+ul{
+    display: block;
+}
+
+#nav > ul  ul:hover{
+    display: block;
 }
 
 /* section CSS */
